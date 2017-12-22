@@ -1,0 +1,23 @@
+application:
+    name: Example
+
+
+spring:
+  jpa:
+    database: POSTGRESQL
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+  datasource:
+    platform: postgres
+    url: jdbc:postgresql://localhost/postgres
+
+
+logging:
+  level:
+    root: info
+    org:
+      hibernate:
+        SQL: debug
+
+
