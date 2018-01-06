@@ -1,6 +1,7 @@
 package com.example;
 
 
+import com.example.bookstore.BookstoreService;
 import com.example.car.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -22,6 +23,8 @@ public class DummyController {
   @Autowired
   CarService cars;
 
+  @Autowired
+  BookstoreService bookstore;
 
   @GetMapping(value = "/cars")
   public ResponseEntity<Iterable> GetCars() {
@@ -57,6 +60,26 @@ public class DummyController {
 
   }
 
+
+
+  @GetMapping(value = "/authors")
+  public ResponseEntity<Iterable> GetAuthors(){
+
+    return ResponseEntity.ok(bookstore.GetAuthors());
+  }
+
+
+  @GetMapping(value = "/books")
+  public ResponseEntity<Iterable> GetBooks(){
+
+    return ResponseEntity.ok(bookstore.GetBooks());
+  }
+
+  @GetMapping(value = "/publishers")
+  public ResponseEntity<Iterable> GetPublishers(){
+
+    return ResponseEntity.ok(bookstore.GetPublishers());
+  }
 
 
 }
