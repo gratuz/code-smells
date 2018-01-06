@@ -7,7 +7,7 @@ spring:
     database: POSTGRESQL
     show-sql: true
     hibernate:
-      ddl-auto: update
+      ddl-auto: none
   datasource:
     platform: postgres
     url: jdbc:postgresql://localhost/postgres
